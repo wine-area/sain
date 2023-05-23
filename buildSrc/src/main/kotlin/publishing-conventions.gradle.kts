@@ -1,6 +1,6 @@
-import de.mrclrchtr.education.gradle.extension.fromComponent
-import de.mrclrchtr.education.gradle.extension.getGitLabToken
-import de.mrclrchtr.education.gradle.extension.gitLab
+import io.nanfeng.gradle.extension.fromComponent
+import io.nanfeng.gradle.extension.getGitLabToken
+import io.nanfeng.gradle.extension.gitLab
 
 /*
 *

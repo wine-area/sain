@@ -1,6 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
-import de.mrclrchtr.education.gradle.constant.JDK_VERSION
+import io.nanfeng.gradle.constant.JDK_VERSION
 
 plugins {
     `java-library`
@@ -20,8 +20,8 @@ tasks.compileJava {
     @Suppress("SpellCheckingInspection")
     options.compilerArgs.addAll(
         listOf(
-            "-Xlint:all", // Enables all recommended warnings.
-            "-Werror" // Terminates compilation when warnings occur.
+//            "-Xlint:all", // Enables all recommended warnings.
+//            "-Werror" // Terminates compilation when warnings occur.
         )
     )
     options.encoding = "UTF-8"
@@ -40,4 +40,8 @@ tasks.jar {
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+
 }

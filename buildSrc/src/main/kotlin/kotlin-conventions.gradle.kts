@@ -1,7 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
-import de.mrclrchtr.education.gradle.constant.JDK_VERSION
-import de.mrclrchtr.education.gradle.constant.KOTLIN_VERSION
+import io.nanfeng.gradle.constant.JDK_VERSION
+import io.nanfeng.gradle.constant.KOTLIN_VERSION
 import io.gitlab.arturbosch.detekt.Detekt
 import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 
@@ -11,14 +11,18 @@ plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
     kotlin("jvm")
 
+    // kapt
+    kotlin("kapt")
     // A tool to detect kotlin problems. It's nice, give it a try!
     id("io.gitlab.arturbosch.detekt")
 }
 
 val embeddedMajorAndMinorKotlinVersion = project.getKotlinPluginVersion().substringBeforeLast(".")
 if (KOTLIN_VERSION != embeddedMajorAndMinorKotlinVersion) {
-    logger.warn("Constant 'KOTLIN_VERSION' ($KOTLIN_VERSION) differs from embedded Kotlin version in Gradle (${project.getKotlinPluginVersion()})!\n" +
-            "Constant 'KOTLIN_VERSION' should be ($embeddedMajorAndMinorKotlinVersion).")
+    logger.warn(
+        "Constant 'KOTLIN_VERSION' ($KOTLIN_VERSION) differs from embedded Kotlin version in Gradle (${project.getKotlinPluginVersion()})!\n" +
+                "Constant 'KOTLIN_VERSION' should be ($embeddedMajorAndMinorKotlinVersion)."
+    )
 }
 
 tasks.compileKotlin {
@@ -66,7 +70,6 @@ dependencies {
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     }
-
     // Align versions of all Kotlin components
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 

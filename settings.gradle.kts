@@ -2,9 +2,11 @@ plugins {
     id("com.gradle.enterprise").version("3.12.4")
 }
 
-rootProject.name = "gradle-kotlin-spring"
-include(":message-factory")
-include(":message-dashboard")
+rootProject.name = "sain"
+include(":common:core")
+include(":common:data")
+include(":common:web")
+include(":common:webflux")
 
 if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEPTED").isNullOrEmpty()) {
     gradleEnterprise {
@@ -15,3 +17,6 @@ if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEP
         }
     }
 }
+include("user")
+include("user:api")
+include("user:service")

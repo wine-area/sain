@@ -1,33 +1,472 @@
 [versions]
-kotlin-logging = "3.0.5"
-lorem = "2.1"
-j2html = "1.6.0"
-kotlin = "1.8.10"
-springBoot = "3.0.4"
+
+# plugins
+kotlin = "1.8.20"
+lombok-plugin = "8.0.1"
+kover = "0.6.1"
+benchmark = "0.4.7"
+spotless = "6.18.0"
+versions = "0.46.0"
+update = "0.8.0"
+release = "1.15.0"
+shadow = "8.1.1"
+jib = "3.3.1"
+logging = "0.11.0"
+protobufPlugin = "0.9.2"
+quarkus = "2.16.6.Final"
+spring-boot = "3.0.6"
+spring-dependencyManagement = "1.1.0"
+spring-aot = "0.12.2"
+flyway = "9.16.3"
+flywayTest = "9.5.0"
+native = "0.9.20"
+amd = "0.2.1"
+dependencycheck = "8.2.1"
+dotenv = "2.0.0"
+graphql-generator = "1.18.9"
+#graphql-generator = "2.0RC1"
+graphql-kotlin = "7.0.0-alpha.4"
+
+# kotlin
+spek = "2.0.11"
+kotest = "5.5.5"
+junit = "5.9.2"
+junit4 = "4.13.2"
+serialization = "1.5.0"
+avro4k = "1.7.0"
+kaml = "0.17.0"
+coroutines = "1.6.4"
+metadata = "0.3.0"
+turbine = "0.12.1"
+ktlint = "0.46.1"
+mockk = "1.13.4"
+arrow = "1.1.5"
+konfig = "1.1.2"
+mapstruct = "1.5.3.Final"
+markdown = "0.4.1"
+javafaker = "1.0.2"
+jakartaValidation = "3.0.2"
+jakartaPersistence = "3.1.0"
+kotlinRetry = "1.0.9"
+
+# gradle
+gradleTool = "8.1"
+
+# test matchers
+hamcrest = "1.3"
+restAssured = "5.3.0"
+
+# Jacoco
+jacoco = "0.8.7"
+
+# logs
+kotlinLogging = "3.0.5"
+slf4j = { require = "2.0.7" }
+# slf4j = "1.7.31"
+
+# uuid
+uuid = "5.2.0"
+# grpc
+grpc = "1.54.0"
+grpcKotlin = "1.3.0"
+protobuf = "3.22.2"
+pgv = "0.6.13"
+guava = "30.1-jre"
+sentinel = "1.8.6"
+
+# beam
+beam = "2.46.0"
+csv = "1.8"
+openCsv = "5.0"
+# yaml version
+yaml = "2.10.3"
+# avro version
+avro = "1.11.1"
+
+# spring
+springKotest = "1.1.2"
+springMockk = "4.0.2"
+snakeyaml = "1.33"
+springGrpc = "5.0.0"
+springCloud = "2022.0.2"
+querydsl = "5.0.0"
+lombok = "1.18.26"
+graphqlJava = "20.0"
+graphqlDatetime = "6.0.0"
+nfobip = "8.1.0"
+r2dbc = "Borca-RELEASE"
+mssql = "11.2.3.jre17"
+redisOm = "0.8.0"
+
+# kafka
+kafkaStreams = "3.4.0"
+javaFaker = "1.0.2"
+confluent = "7.3.3"
+# @pin
+avro4kSerde = "0.14.0"
 dokka = "1.8.10"
+# google
+googlePubsub = "1.123.5"
+googleTink = "1.8.0"
+
+# telemetry
+otel = "1.24.0"
+otel-alpha = "1.24.0-alpha"
+otel-api-alpha = "1.10.0-alpha-rc.1" # FIXME remove
+otel-instrumentation = "1.23.0"
+otel-instrumentation-alpha = "1.23.0"
+otel-instrumentation-snapshot = "1.24.0-SNAPSHOT"
+otel-instrumentation-snapshot-alpha = "1.24.0-alpha-SNAPSHOT"
+micrometer = "1.10.5"
 detekt = "1.22.0"
-
 [libraries]
-# project dependencies
-kotlin-logging = { module = "io.github.microutils:kotlin-logging", version.ref = "kotlin-logging" }
-lorem = { module = "com.thedeanda:lorem", version.ref = "lorem" }
-j2html = { module = "com.j2html:j2html", version.ref = "j2html" }
-
-
-# buildSrc dependencies (plugins)
-kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
-kotlin-noarg = { module = "org.jetbrains.kotlin:kotlin-noarg", version.ref = "kotlin" }
-springBoot-gradle = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "springBoot" }
-dokka-gradle = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
-detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+uuid = { module = "com.github.f4b6a3:uuid-creator", version.ref = "uuid" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+#commons-lang3 = { group = "org.apache.commons", name = "commons-lang3", version = { strictly = "[3.8,4.0[", prefer = "3.9" } }
+grpc-stub = { module = "io.grpc:grpc-stub", version.ref = "grpc" }
+grpc-kotlin-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpcKotlin" }
+grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
+grpc-netty = { module = "io.grpc:grpc-netty", version.ref = "grpc" }
+grpc-services = { module = "io.grpc:grpc-services", version.ref = "grpc" } # Optional. includes grpc-protobuf
+grpc-xds = { module = "io.grpc:grpc-xds", version.ref = "grpc" } # Optional. includes grpc-services, grpc-auth,  grpc-alts
+protobuf-java = { module = "com.google.protobuf:protobuf-java", version.ref = "protobuf" }
+protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "protobuf" }
+sentinel-grpc-adapter = { module = "com.alibaba.csp:sentinel-grpc-adapter", version.ref = "sentinel" }
+pgv-java-stub = { module = "io.envoyproxy.protoc-gen-validate:pgv-java-stub", version.ref = "pgv" }
+#concurrency-limits-grpc = { module="com.netflix.concurrency-limits:concurrency-limits-grpc", version.ref="netflixConcurrency" }
+jakarta-validation = { module = "jakarta.validation:jakarta.validation-api", version.ref = "jakartaValidation" }
+jakarta-persistence = { module = "jakarta.persistence:jakarta.persistence-api", version.ref = "jakartaPersistence" }
+
+# Kotlin metadata
+kotlin-metadata = { module = "org.jetbrains.kotlinx:kotlinx-metadata-jvm", version.ref = "metadata" }
+# Kotlin serialization dependencies
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-serialization-avro = { module = "com.github.avro-kotlin.avro4k:avro4k-core", version.ref = "avro4k" }
+kotlinx-serialization-yaml = { module = "com.charleskorn.kaml:kaml", version.ref = "kaml" }
+kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "serialization" }
+# Kotlin coroutines dependencies
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-jvm = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm", version.ref = "coroutines" }
+kotlinx-coroutines-slf4j = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-slf4j", version.ref = "coroutines" }
+kotlinx-coroutines-reactive = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactive", version.ref = "coroutines" } # for `Reactive Streams`
+kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "coroutines" } # for `Project Reactor`
+
+# arrow dependencies. Usage:
+# implementation(enforcedPlatform(libs.arrow.bom.get().toString()))
+arrow-bom = { module = "io.arrow-kt:arrow-stack", version.ref = "arrow" }
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-syntax = { module = "io.arrow-kt:arrow-syntax", version.ref = "arrow" }
+arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
+
+# spring dependencies
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-starter-thymeleaf = { module = "org.springframework.boot:spring-boot-starter-thymeleaf" }
+spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-data-r2dbc = { module = "org.springframework.boot:spring-boot-starter-data-r2dbc" }
+spring-boot-starter-data-r2dbc-querydsl = { module = "com.infobip:infobip-spring-data-r2dbc-querydsl-boot-starter", version.ref = "nfobip" }
+spring-boot-starter-rsocket = { module = "org.springframework.boot:spring-boot-starter-rsocket" }
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security" }
+spring-boot-starter-oauth2-resource-server = { module = "org.springframework.boot:spring-boot-starter-oauth2-resource-server" }
+spring-boot-reactor-kotlin-extensions = { module = "io.projectreactor.kotlin:reactor-kotlin-extensions" }
+spring-boot-reactor-kafka = { module = "io.projectreactor.kafka:reactor-kafka" }
+spring-boot-kafka = { module = "org.springframework.kafka:spring-kafka" }
+
+spring-boot-starter-graphql = { module = "org.springframework.boot:spring-boot-starter-graphql" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+graphql-java-extended-validation = { module = "com.graphql-java:graphql-java-extended-validation", version.ref = "graphqlJava" }
+graphql-java-extended-scalars = { module = "com.graphql-java:graphql-java-extended-scalars", version.ref = "graphqlJava" }
+graphql-datetime-spring-boot-autoconfigure = { module = "com.tailrocks.graphql:graphql-datetime-spring-boot-autoconfigure", version.ref = "graphqlDatetime" }
+# THE VERSION MUST BE THE SAME AS THE PLUGIN's ONE
+graphql-java-client-runtime = { module = "com.graphql-java-generator:graphql-java-client-runtime", version.ref = "graphql-generator" }
+# Usage: annotationProcessor(libs.spring.boot.configuration.processor)
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }  # to validate auto-completion on configuration properties
+# Usage: annotationProcessor(libs.spring.boot.autoconfigure.processor)
+spring-boot-autoconfigure-processor = { module = "org.springframework.boot:spring-boot-autoconfigure-processor" } # improve startup time
+spring-boot-starter-grpc = { module = "io.github.lognet:grpc-spring-boot-starter", version.ref = "springGrpc" }
+spring-boot-redis-om = { module = "com.redis.om:redis-om-spring", version.ref = "redisOm" }
+
+# [graphql-kotlin](https://opensource.expediagroup.com/graphql-kotlin/docs)
+graphql-kotlin-spring-server = { module = "com.expediagroup:graphql-kotlin-spring-server", version.ref = "graphql-kotlin" }
+graphql-kotlin-hooks-provider = { module = "com.expediagroup:graphql-kotlin-hooks-provider", version.ref = "graphql-kotlin" }
+querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl" }
+# Flyway
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-sqlserver = { module = "org.flywaydb:flyway-sqlserver", version.ref = "flyway" }
+
+# database drivers
+# Usage: implementation(enforcedPlatform(libs.database.r2dbc.bom.get().toString()))
+database-r2dbc-bom = { module = "io.r2dbc:r2dbc-bom", version.ref = "r2dbc" }
+database-r2dbc-pool = { module = "io.r2dbc:r2dbc-pool" } # runtimeOnly
+database-r2dbc-h2 = { module = "io.r2dbc:r2dbc-h2" } # runtimeOnly
+database-r2dbc-postgresql = { module = "io.r2dbc:r2dbc-postgresql" } # runtimeOnly
+database-r2dbc-mssql = { module = "io.r2dbc:r2dbc-mssql" } # runtimeOnly
+database-h2 = { module = "com.h2database:h2" } # runtimeOnly
+database-mssql = { module = "com.microsoft.sqlserver:mssql-jdbc", version.ref = "mssql" } # runtimeOnly
+
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+# Usage: developmentOnly(libs.spring.boot.devtools)
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
+
+# Usage: exclude `spring-boot-starter-logging` module when using `spring-boot-starter-log4j2`
+# implementation(libs.spring.boot.starter.log4j2)
+# modules {
+#   module("org.springframework.boot:spring-boot-starter-logging") {
+#     replacedBy("org.springframework.boot:spring-boot-starter-log4j2", "Use Log4j2 instead of Logback")
+#   }
+# }
+spring-boot-starter-log4j2 = { module = "org.springframework.boot:spring-boot-starter-log4j2" }
+
+## Spring Cloud. Usage:
+# implementation(enforcedPlatform(libs.spring.cloud.bom.get().toString()))
+spring-cloud-bom = { module = "org.springframework.cloud:spring-cloud-dependencies", version.ref = "springCloud" }
 
 
+## Spring Cloud Functions.  Usage:
+# implementation(enforcedPlatform(libs.spring.cloud.gcp.bom.get().toString()))
+# implementation(libs.bundles.spring.cloud.functions)
+spring-cloud-starter-function-webflux = { module = "org.springframework.cloud:spring-cloud-starter-function-webflux" }
+spring-cloud-function-context = { module = "org.springframework.cloud:spring-cloud-function-context" }
+
+kafka-avro-serializer = { module = "io.confluent:kafka-avro-serializer", version.ref = "confluent" }
+kafka-avro-serde = { module = "io.confluent:kafka-streams-avro-serde", version.ref = "confluent" }
+kafka-avro4k-serializer = { module = "com.github.thake.avro4k:avro4k-kafka-serializer", version.ref = "avro4kSerde" }
+
+snakeyaml = { module = "org.yaml:snakeyaml", version.ref = "snakeyaml" }
+markdown = { module = "org.jetbrains:markdown", version.ref = "markdown" }
+javafaker = { module = "com.github.javafaker:javafaker", version.ref = "javafaker" }
+# Use implementation(libs.kotlinx.serialization.json) instead of implementation(libs.jackson.module.kotlin)
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
+
+
+# mapstruct dependencies
+# FIXME: https://github.com/quarkusio/quarkus/issues/14012
+mapstruct-core = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+# Usage: kapt(libs.mapstruct.processor)
+mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
+
+# Logging dependencies
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+kotlin-logging = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlinLogging" }
+slf4j-jdk14 = { module = "org.slf4j:slf4j-jdk14", version.ref = "slf4j" } # runtimeOnly
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" } # runtimeOnly
+
+# Telemetry dependencies
+opentelemetry-bom = { module = "io.opentelemetry:opentelemetry-bom", version.ref = "otel" }
+opentelemetry-bomAlpha = { module = "io.opentelemetry:opentelemetry-bom-alpha", version.ref = "otel-alpha" }
+opentelemetry-instrumentation-bom = { module = "io.opentelemetry.instrumentation:opentelemetry-instrumentation-bom", version.ref = "otel-instrumentation" }
+opentelemetry-instrumentation-bomAlpha = { module = "io.opentelemetry.instrumentation:opentelemetry-instrumentation-bom-alpha", version.ref = "otel-instrumentation-alpha" }
+
+opentelemetry-api = { module = "io.opentelemetry:opentelemetry-api" }
+opentelemetry-sdk = { module = "io.opentelemetry:opentelemetry-sdk" }
+
+# opentelemetry-api-metrics = { module = "io.opentelemetry:opentelemetry-api-metrics"} // FIXME remove below
+opentelemetry-api-metrics = { module = "io.opentelemetry:opentelemetry-api-metrics", version.ref = "otel-api-alpha" }
+opentelemetry-sdk-metrics = { module = "io.opentelemetry:opentelemetry-sdk-metrics" }
+
+opentelemetry-javaagent = { module = "io.opentelemetry.javaagent:opentelemetry-javaagent", version.ref = "otel-instrumentation" }
+
+opentelemetry-instrumentation-annotations = { module = "io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations" }
+opentelemetry-instrumentation-spring-boot-autoconfigure = { module = "io.opentelemetry.instrumentation:opentelemetry-spring-boot-autoconfigure" }
+opentelemetry-instrumentation-graphql = { module = "io.opentelemetry.instrumentation:opentelemetry-graphql-java-12.0" }
+opentelemetry-instrumentation-jdbc = { module = "io.opentelemetry.instrumentation:opentelemetry-jdbc" }
+opentelemetry-sdk-extension-autoconfigure = { module = "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure" }
+opentelemetry-extension-kotlin = { module = "io.opentelemetry:opentelemetry-extension-kotlin" }
+
+opentelemetry-exporter-logging = { module = "io.opentelemetry:opentelemetry-exporter-logging" }
+opentelemetry-exporter-jaeger = { module = "io.opentelemetry:opentelemetry-exporter-jaeger" }
+opentelemetry-exporter-otlp = { module = "io.opentelemetry:opentelemetry-exporter-otlp" }
+opentelemetry-exporter-prometheus = { module = "io.opentelemetry:opentelemetry-exporter-prometheus" }
+
+opentelemetry-sdk-testing = { module = "io.opentelemetry:opentelemetry-sdk-testing" }
+
+micrometer-registry-prometheus = { module = "io.micrometer:micrometer-registry-prometheus", version.ref = "micrometer" }
+
+# Testing dependencies
+kotest-framework-engine-jvm = { module = "io.kotest:kotest-framework-engine-jvm", version.ref = "kotest" }
+kotest-framework-api-jvm = { module = "io.kotest:kotest-framework-api-jvm", version.ref = "kotest" }
+kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
+kotest-assertions-json-jvm = { module = "io.kotest:kotest-assertions-json-jvm", version.ref = "kotest" }
+kotest-property-jvm = { module = "io.kotest:kotest-property-jvm", version.ref = "kotest" }
+kotest-runner-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
+kotest-extensions-spring = { module = "io.kotest.extensions:kotest-extensions-spring", version.ref = "springKotest" }
+
+kotlinx-benchmark-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-benchmark-runtime", version.ref = "benchmark" }
+mockk-test = { module = "io.mockk:mockk", version.ref = "mockk" }
+hamcrest-all-test = { module = "org.hamcrest:hamcrest-all", version.ref = "hamcrest" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+rest-assured-test = { module = "io.rest-assured:rest-assured", version.ref = "restAssured" }
+rest-assured-kotlin-test = { module = "io.rest-assured:kotlin-extensions" }
+
+grpc-test = { module = "io.grpc:grpc-testing", version.ref = "grpc" }
+spring-boot-gradle-plugin = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-mockk-test = { module = "com.ninja-squad:springmockk", version.ref = "springMockk" }
+spring-boot-reactor-test = { module = "io.projectreactor:reactor-test" }
+spring-boot-graphql-test = { module = "org.springframework.graphql:spring-graphql-test" }
+spring-boot-security-test = { module = "org.springframework.security:spring-security-test" }
+spring-boot-kafka-test = { module = "org.springframework.kafka:spring-kafka-test" }
+turbine-test = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+junit4-test = { module = "junit:junit", version.ref = "junit4" }
+spring-boot-flyway-test = { module = "org.flywaydb.flyway-test-extensions:flyway-spring-test", version.ref = "flywayTest" }
+
+# beam dependencies
+beam-sdks-java-core = { module = "org.apache.beam:beam-sdks-java-core", version.ref = "beam" }
+beam-runners-direct-java = { module = "org.apache.beam:beam-runners-direct-java", version.ref = "beam" }
+beam-runners-google-cloud-dataflow-java = { module = "org.apache.beam:beam-runners-google-cloud-dataflow-java", version.ref = "beam" }
+beam-sdks-java-io-google-cloud-platform = { module = "org.apache.beam:beam-sdks-java-io-google-cloud-platform", version.ref = "beam" }
+beam-sdks-java-extensions-kryo = { module = "org.apache.beam:beam-sdks-java-extensions-kryo", version.ref = "beam" }
+beam-sdks-java-extensions-euphoria = { module = "org.apache.beam:beam-sdks-java-extensions-euphoria", version.ref = "beam" }
+beam-sdks-java-extensions-json-jackson = { module = "org.apache.beam:beam-sdks-java-extensions-json-jackson", version.ref = "beam" }
+beam-sdks-java-extensions-protobuf = { module = "org.apache.beam:beam-sdks-java-extensions-protobuf", version.ref = "beam" }
+
+# konf dependencies
+konf-core = { module = "com.uchuhimo:konf-core", version.ref = "konfig" }
+konf-yaml = { module = "com.uchuhimo:konf-yaml", version.ref = "konfig" }
+
+# google
+google-cloud-pubsub = { module = "com.google.cloud:google-cloud-pubsub", version.ref = "googlePubsub" }
+
+
+# buildSrc plugin libraries
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-allopen-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-allopen", version.ref = "kotlin" }
+kotlin-benchmark-plugin = { group = "org.jetbrains.kotlinx", name = "kotlinx-benchmark-plugin", version.ref = "benchmark" }
+
+detekt-gradle-plugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+dokka-gradle-plugin = { group = "org.jetbrains.dokka", name = "dokka-gradle-plugin", version.ref = "dokka" }
+# Bundles of dependencies usually used together so they can be included in one go
 [bundles]
-kotlinLogging = ["kotlin-logging"]
-lorem = ["lorem"]
-j2html = ["j2html"]
+#testDependencies = ["junit-jupiter", "junit-engine"]
+grpc = ["grpc-kotlin-stub", "grpc-protobuf", "protobuf-java"]
+
+logging-common = ["slf4j-api", "kotlin-logging"]
+logging-runtime = ["slf4j-jdk14", "slf4j-simple"]
+
+opentelemetry-api = ["opentelemetry-api", "opentelemetry-api-metrics"]
+opentelemetry-sdk = ["opentelemetry-sdk", "opentelemetry-sdk-metrics"]
+opentelemetry-test = ["opentelemetry-sdk", "opentelemetry-sdk-metrics", "opentelemetry-sdk-testing"]
+opentelemetry-basic = [
+    "opentelemetry-api",
+    "opentelemetry-api-metrics",
+    "opentelemetry-sdk",
+    "opentelemetry-sdk-metrics",
+    "opentelemetry-instrumentation-annotations",
+    "opentelemetry-extension-kotlin",
+    "opentelemetry-exporter-logging",
+    "opentelemetry-exporter-prometheus",
+    "opentelemetry-instrumentation-spring-boot-autoconfigure",
+]
+
+testing-common = [
+    "kotest-framework-engine-jvm",
+    "kotest-framework-api-jvm",
+    "kotest-assertions-core-jvm",
+    "kotest-property-jvm",
+    "mockk-test",
+]
+
+konf = ["konf-core", "konf-yaml"]
+
+kotlinx-serialization-all = [
+    "kotlinx-serialization-json",
+    "kotlinx-serialization-protobuf",
+    "kotlinx-serialization-avro",
+]
+
+kotlinx-coroutines = [
+    "kotlinx-coroutines-core",
+    "kotlinx-coroutines-jvm",
+]
+
+spring-basic = [
+    "spring-boot-starter-webflux",
+    # Spring Tools
+    "spring-boot-starter-actuator",
+    # Spring Validation
+    "spring-boot-starter-validation",
+    # Kotlin Serialization
+    "kotlinx-serialization-json", # Don't include "jackson-module-kotlin" so that, it defaults to Kotlin serialization
+    # Kotlin Coroutines
+    "kotlinx-coroutines-core",
+    "kotlinx-coroutines-jvm",
+    "kotlinx-coroutines-reactor",
+    "spring-boot-reactor-kotlin-extensions"
+]
+
+spring-grpc = [
+    "grpc-kotlin-stub",
+    "spring-boot-starter-grpc",
+]
+
+spring-cloud-functions = [
+    "spring-cloud-starter-function-webflux",
+    "spring-cloud-function-context",
+]
+
+spring-graphql = [
+    "spring-boot-starter-webflux",
+    # Spring Tools
+    "spring-boot-starter-actuator",
+    # Spring Validation
+    "spring-boot-starter-validation",
+    # Kotlin Serialization
+    "kotlinx-serialization-json", # Don't include "jackson-module-kotlin" so that, it defaults to Kotlin serialization
+    # Spring GraphQL
+    "spring-boot-starter-graphql",
+    "graphql-java-extended-validation",
+    "graphql-java-extended-scalars",
+    "graphql-datetime-spring-boot-autoconfigure",
+    # Kotlin Coroutines
+    "kotlinx-coroutines-core",
+    "kotlinx-coroutines-jvm",
+    "kotlinx-coroutines-reactor",
+    "spring-boot-reactor-kotlin-extensions"
+]
+
+arrow = [
+    "arrow-core",
+    "arrow-syntax",
+    "arrow-fx-coroutines",
+]
+
+beam = [
+    "beam-sdks-java-core",
+    "beam-runners-direct-java",
+    "beam-runners-google-cloud-dataflow-java",
+    "beam-sdks-java-io-google-cloud-platform",
+]
+
+mapstruct = ["mapstruct-core", "mapstruct-processor"]
 
 [plugins]
-detekt-gradle = { id = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+dependencycheck = { id = "org.owasp.dependencycheck", version.ref = "dependencycheck" }
+dotenv = { id = "co.uzzu.dotenv.gradle", version.ref = "dotenv" }
+flyway = { id = "org.flywaydb.flyway", version.ref = "flyway" }
+jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
+logging = { id = "dev.jacomet.logging-capabilities", version.ref = "logging" }
+lombok = { id = "io.freefair.lombok", version.ref = "lombok-plugin" }
+native = { id = "org.graalvm.buildtools.native", version.ref = "native" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+release = { id = "pl.allegro.tech.build.axion-release", version.ref = "release" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+update = { id = "nl.littlerobots.version-catalog-update", version.ref = "update" }
+versions = { id = "com.github.ben-manes.versions", version.ref = "versions" }
+graphql-generator = { id = "com.graphql_java_generator.graphql-gradle-plugin", version.ref = "graphql-generator" }
+graphql-kotlin = { id = "com.expediagroup.graphql", version.ref = "graphql-kotlin" }
+kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
+kotlin-benchmark = { id = "org.jetbrains.kotlinx.benchmark", version.ref = "benchmark" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+kotlin-lombok = { id = "org.jetbrains.kotlin.plugin.lombok", version.ref = "kotlin" }
+kotlin-noarg = { id = "org.jetbrains.kotlin.plugin.noarg", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+spring-aot = { id = "org.springframework.experimental.aot", version.ref = "spring-aot" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependencyManagement = { id = "io.spring.dependency-management", version.ref = "spring-dependencyManagement" }

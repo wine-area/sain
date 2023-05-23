@@ -1,5 +1,6 @@
 plugins {
     id("java-conventions")
+    id("library-conventions")
 
     // Classes annotated with @Configuration, @Controller, @RestController, @Service or @Repository are automatically opened
     // https://kotlinlang.org/docs/reference/compiler-plugins.html#spring-support
@@ -19,7 +20,9 @@ apply(plugin = "org.springframework.boot")
 logger.lifecycle("Enabling Spring Boot Dependency Management in module ${project.path}")
 apply(plugin = "io.spring.dependency-management")
 
+
 springBoot {
     // Creates META-INF/build-info.properties for Spring Boot Actuator
     buildInfo()
 }
+
