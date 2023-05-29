@@ -1,4 +1,4 @@
-package io.nanfeng.user.biz.controller
+package io.nanfeng.user.biz.resource
 
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.security.access.prepost.PreAuthorize

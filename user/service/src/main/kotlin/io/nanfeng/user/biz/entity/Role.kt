@@ -1,6 +1,7 @@
 package io.nanfeng.user.biz.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnore
+import io.nanfeng.common.data.entity.BaseEntity
 import jakarta.persistence.*
 import org.hibernate.Hibernate
 import org.springframework.data.jpa.domain.AbstractAuditable
@@ -55,13 +56,13 @@ data class Role(
     var menuSet: MutableSet<Resource> = mutableSetOf(),
 
 
-    ) : AbstractAuditable<User, Long>() {
+    ) : BaseEntity() {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
         other as Role
 
-        return id != null && id == other.id
+        return  id == other.id
     }
 
     override fun hashCode(): Int = javaClass.hashCode()

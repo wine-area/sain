@@ -59,7 +59,7 @@ data class Organization(
         if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
         other as Organization
 
-        return id != null && id == other.id
+        return  id == other.id
     }
 
     override fun hashCode(): Int = javaClass.hashCode()

@@ -17,6 +17,6 @@ dependencies {
     kapt(libs.mapstruct.processor)
     // knife4j
     implementation("com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter:+")
-    // spring-oauthorization-server
+//     spring-oauthorization-server 需要oauth2的时候再整
     implementation("org.springframework.security:spring-security-oauth2-authorization-server:1.0.2")
 }

@@ -13,24 +13,21 @@ shadow = "8.1.1"
 jib = "3.3.1"
 logging = "0.11.0"
 protobufPlugin = "0.9.2"
-quarkus = "2.16.6.Final"
 spring-boot = "3.0.6"
 spring-dependencyManagement = "1.1.0"
 spring-aot = "0.12.2"
 flyway = "9.16.3"
 flywayTest = "9.5.0"
 native = "0.9.20"
-amd = "0.2.1"
 dependencycheck = "8.2.1"
 dotenv = "2.0.0"
 graphql-generator = "1.18.9"
 #graphql-generator = "2.0RC1"
 graphql-kotlin = "7.0.0-alpha.4"
+redisson = "3.21.3"
 
 # kotlin
-spek = "2.0.11"
 kotest = "5.5.5"
-junit = "5.9.2"
 junit4 = "4.13.2"
 serialization = "1.5.0"
 avro4k = "1.7.0"
@@ -38,7 +35,6 @@ kaml = "0.17.0"
 coroutines = "1.6.4"
 metadata = "0.3.0"
 turbine = "0.12.1"
-ktlint = "0.46.1"
 mockk = "1.13.4"
 arrow = "1.1.5"
 konfig = "1.1.2"
@@ -89,7 +85,7 @@ springMockk = "4.0.2"
 snakeyaml = "1.33"
 springGrpc = "5.0.0"
 springCloud = "2022.0.2"
-querydsl = "5.0.0"
+querydsl = "5.0.0:jakarta"
 lombok = "1.18.26"
 graphqlJava = "20.0"
 graphqlDatetime = "6.0.0"
@@ -120,6 +116,10 @@ otel-instrumentation-snapshot-alpha = "1.24.0-alpha-SNAPSHOT"
 micrometer = "1.10.5"
 detekt = "1.22.0"
 [libraries]
+# queryDsl
+querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl" }
+querydsl-apt = { module = "com.querydsl:querydsl-apt", version.ref = "querydsl" }
+
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 uuid = { module = "com.github.f4b6a3:uuid-creator", version.ref = "uuid" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
@@ -137,7 +137,7 @@ pgv-java-stub = { module = "io.envoyproxy.protoc-gen-validate:pgv-java-stub", ve
 #concurrency-limits-grpc = { module="com.netflix.concurrency-limits:concurrency-limits-grpc", version.ref="netflixConcurrency" }
 jakarta-validation = { module = "jakarta.validation:jakarta.validation-api", version.ref = "jakartaValidation" }
 jakarta-persistence = { module = "jakarta.persistence:jakarta.persistence-api", version.ref = "jakartaPersistence" }
-
+redisson-starter = { module = "org.redisson:redisson-spring-boot-starter", version.ref = "redisson" }
 # Kotlin metadata
 kotlin-metadata = { module = "org.jetbrains.kotlinx:kotlinx-metadata-jvm", version.ref = "metadata" }
 # Kotlin serialization dependencies
@@ -191,7 +191,6 @@ spring-boot-redis-om = { module = "com.redis.om:redis-om-spring", version.ref = 
 # [graphql-kotlin](https://opensource.expediagroup.com/graphql-kotlin/docs)
 graphql-kotlin-spring-server = { module = "com.expediagroup:graphql-kotlin-spring-server", version.ref = "graphql-kotlin" }
 graphql-kotlin-hooks-provider = { module = "com.expediagroup:graphql-kotlin-hooks-provider", version.ref = "graphql-kotlin" }
-querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl" }
 # Flyway
 flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
 flyway-sqlserver = { module = "org.flywaydb:flyway-sqlserver", version.ref = "flyway" }
