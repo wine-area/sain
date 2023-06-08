@@ -59,7 +59,7 @@ class JpaRegisteredClientRepository(
                     .forEach { grantType: String -> grantTypes.add(resolveAuthorizationGrantType(grantType)) }
             }
             .redirectUris { uris: MutableSet<String?> -> uris.addAll(redirectUris) }
-            .scopes { scopes: MutableSet<String?> -> scopes.addAll(clientScopes) }
+            .scopes { scopes: MutableSet<String> -> scopes.addAll(clientScopes) }
         val clientSettingsMap = parseMap(client.clientSettings)
         builder.clientSettings(ClientSettings.withSettings(clientSettingsMap).build())
         val tokenSettingsMap = parseMap(client.tokenSettings)

@@ -2,13 +2,18 @@ package io.nanfeng.user.biz.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import io.nanfeng.common.data.entity.BaseTreeEntity
-import jakarta.persistence.*
+import jakarta.persistence.CascadeType
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.FetchType
+import jakarta.persistence.ForeignKey
+import jakarta.persistence.Index
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.JoinTable
+import jakarta.persistence.ManyToMany
+import jakarta.persistence.Table
 import org.hibernate.Hibernate
 
-/**
- *
- * @since JDK 11
- */
 @Entity
 @Table(
     name = "t_organization", indexes = [
@@ -16,7 +21,6 @@ import org.hibernate.Hibernate
         Index(columnList = "code"),
         Index(columnList = "parentId")]
 )
-@org.hibernate.annotations.Table(appliesTo = "t_organization", comment = "机构信息")
 /* "机构信息" */
 data class Organization(
 
@@ -40,7 +44,11 @@ data class Organization(
     @ManyToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REFRESH])
     @JoinTable(
         name = "t_user_organization_set",
-        joinColumns = [JoinColumn(name = "organization_id", referencedColumnName = "id", foreignKey = ForeignKey(name="none"))],
+        joinColumns = [JoinColumn(
+            name = "organization_id",
+            referencedColumnName = "id",
+            foreignKey = ForeignKey(name = "none")
+        )],
         inverseJoinColumns = [JoinColumn(name = "user_id", referencedColumnName = "id")]
     )
     var userSet: MutableSet<User> = mutableSetOf(),
@@ -49,7 +57,11 @@ data class Organization(
     @ManyToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REFRESH])
     @JoinTable(
         name = "t_user_organization_mng_set",
-        joinColumns = [JoinColumn(name = "organization_id", referencedColumnName = "id", foreignKey = ForeignKey(name="none"))],
+        joinColumns = [JoinColumn(
+            name = "organization_id",
+            referencedColumnName = "id",
+            foreignKey = ForeignKey(name = "none")
+        )],
         inverseJoinColumns = [JoinColumn(name = "user_id", referencedColumnName = "id")]
     )
     var adminUserSet: MutableSet<User> = mutableSetOf()
@@ -59,7 +71,7 @@ data class Organization(
         if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
         other as Organization
 
-        return  id == other.id
+        return id == other.id
     }
 
     override fun hashCode(): Int = javaClass.hashCode()

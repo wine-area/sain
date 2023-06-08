@@ -2,9 +2,16 @@ package io.nanfeng.user.biz.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import io.nanfeng.common.data.entity.BaseEntity
-import jakarta.persistence.*
+import jakarta.persistence.CascadeType
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.FetchType
+import jakarta.persistence.ForeignKey
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.JoinTable
+import jakarta.persistence.ManyToMany
+import jakarta.persistence.Table
 import org.hibernate.Hibernate
-import org.springframework.data.jpa.domain.AbstractAuditable
 
 /**
  *
@@ -12,7 +19,6 @@ import org.springframework.data.jpa.domain.AbstractAuditable
  */
 @Entity
 @Table(name = "t_role")
-@org.hibernate.annotations.Table(appliesTo = "t_role", comment = "角色信息")
 /* "角色信息" */
 data class Role(
 

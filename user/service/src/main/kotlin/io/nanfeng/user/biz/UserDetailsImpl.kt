@@ -4,7 +4,7 @@ import io.nanfeng.user.biz.domain.authentication.dto.UserDetailsDto
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
-class UserDetailsImpl(userDetailsDto: UserDetailsDto) :UserDetails {
+data class UserDetailsImpl(val userDetailsDto: UserDetailsDto) : UserDetails {
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
         TODO("Not yet implemented")
     }
