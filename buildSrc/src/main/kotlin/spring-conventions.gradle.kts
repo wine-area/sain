@@ -1,3 +1,5 @@
+import java.time.Instant
+
 plugins {
     id("java-conventions")
     id("library-conventions")
@@ -21,8 +23,19 @@ logger.lifecycle("Enabling Spring Boot Dependency Management in module ${project
 apply(plugin = "io.spring.dependency-management")
 
 
+
 springBoot {
     // Creates META-INF/build-info.properties for Spring Boot Actuator
-    buildInfo()
+    buildInfo {
+        properties {
+            additional.set(
+                mapOf(
+                    "env" to project.properties.get("env"),
+                    "creationTime" to Instant.now().toString()
+                )
+            )
+
+        }
+    }
 }
 

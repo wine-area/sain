@@ -2,12 +2,14 @@ package io.nanfeng.common.data.entity
 
 import jakarta.persistence.ForeignKey
 import jakarta.persistence.JoinColumn
+import jakarta.persistence.ManyToOne
 import jakarta.persistence.MappedSuperclass
 import jakarta.persistence.OneToMany
 
 @MappedSuperclass
 open class BaseTreeEntity<T : BaseTreeEntity<T>> : BaseEntity() {
-    lateinit var parent: T
+    @ManyToOne
+    var parent: T? = null
 
     /**
      * 父级路径，以/分割

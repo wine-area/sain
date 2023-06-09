@@ -26,13 +26,6 @@ class AuthorizationServerConfiguration {
         // 所有授权通过method security进行控制
         http
             .csrf(CsrfConfigurer<*>::disable)
-            .sessionManagement().disable()
-            .formLogin().disable()
-            .httpBasic().disable()
-            .jee().disable()
-            .x509().disable()
-            .authorizeRequests()
-            .anyRequest().authenticated()
         return http.build()
     }
 

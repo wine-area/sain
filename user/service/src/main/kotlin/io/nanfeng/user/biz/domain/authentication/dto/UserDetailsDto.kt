@@ -6,10 +6,10 @@ import java.io.Serializable
 /**
  * A DTO for the {@link io.nanfeng.user.biz.domain.User} entity
  */
-data class UserDetailsDto(
+class UserDetailsDto(
     val id: Long,
-    val username: String,
-    val password: String,
+    private val username: String,
+    private val password: String,
     val loginNo: String,
     val mobile: String,
     val levels: Int,

@@ -1,7 +1,7 @@
-package io.nanfeng.user.biz.repo;
+package io.nanfeng.user.biz.domain.user;
 
 import io.nanfeng.common.data.repo.QBaseRepository
-import io.nanfeng.user.biz.entity.User
+import io.nanfeng.user.biz.domain.user.User
 import java.util.*
 
 interface UserRepository : QBaseRepository<User> {

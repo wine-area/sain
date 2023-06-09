@@ -45,6 +45,8 @@ jakartaValidation = "3.0.2"
 jakartaPersistence = "3.1.0"
 kotlinRetry = "1.0.9"
 
+# hypersistence-utils-60
+hypersistenceUtils = "3.4.1"
 # gradle
 gradleTool = "8.1"
 
@@ -119,6 +121,8 @@ detekt = "1.22.0"
 # queryDsl
 querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl" }
 querydsl-apt = { module = "com.querydsl:querydsl-apt", version.ref = "querydsl" }
+# hypersistence-utils-60
+hypersistence-utils = { module = "io.hypersistence:hypersistence-utils-hibernate-60", version.ref = "hypersistenceUtils" }
 
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 uuid = { module = "com.github.f4b6a3:uuid-creator", version.ref = "uuid" }

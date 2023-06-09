@@ -4,10 +4,10 @@ plugins {
     id("library-conventions")
 }
 dependencies {
-    api(libs.kotlin.logging)
     api(libs.spring.boot.starter.data.jpa)
-    api(libs.redisson.starter)
+    api(libs.kotlin.logging)
     implementation(libs.spring.boot.starter)
-    api(libs.querydsl.jpa)
-    kapt(libs.querydsl.apt)
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    // kapt-queryDsl-kotlin
+    kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
 }

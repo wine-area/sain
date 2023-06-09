@@ -1,15 +1,24 @@
-package io.nanfeng.user.biz.entity
+package io.nanfeng.user.biz.domain.user
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import io.nanfeng.common.data.entity.BaseEntity
-import jakarta.persistence.*
-import org.hibernate.Hibernate
-import org.springframework.data.jpa.domain.AbstractAuditable
+import io.nanfeng.user.biz.domain.org.Organization
+import io.nanfeng.user.biz.domain.role.entity.Role
+import jakarta.persistence.CascadeType
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.FetchType
+import jakarta.persistence.ForeignKey
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.JoinTable
+import jakarta.persistence.Lob
+import jakarta.persistence.ManyToMany
+import jakarta.persistence.Table
+import jakarta.persistence.Transient
 
 
 @Entity
 @Table(name = "t_user")
-@org.hibernate.annotations.Table(appliesTo = "t_user", comment = "用户信息")
 /* "用户信息" */
 class User(
 

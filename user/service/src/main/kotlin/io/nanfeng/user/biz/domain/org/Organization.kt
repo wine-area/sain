@@ -1,7 +1,8 @@
-package io.nanfeng.user.biz.entity
+package io.nanfeng.user.biz.domain.org
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import io.nanfeng.common.data.entity.BaseTreeEntity
+import io.nanfeng.user.biz.domain.user.User
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -19,7 +20,7 @@ import org.hibernate.Hibernate
     name = "t_organization", indexes = [
         Index(columnList = "area"),
         Index(columnList = "code"),
-        Index(columnList = "parentId")]
+        Index(columnList = "parent_id")]
 )
 /* "机构信息" */
 data class Organization(

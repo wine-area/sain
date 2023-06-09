@@ -1,7 +1,7 @@
 package io.nanfeng.user.biz.infra.mapper
 
 import io.nanfeng.user.biz.domain.authentication.dto.UserDetailsDto
-import io.nanfeng.user.biz.entity.User
+import io.nanfeng.user.biz.domain.user.User
 import io.nanfeng.user.biz.infra.properties.UserProperties
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Component
@@ -13,7 +13,7 @@ class UserMapper(
 
     fun toDto(user: User): UserDetailsDto {
         return UserDetailsDto(
-            id = user.id!!,
+            id = user.id,
             username = user.username,
             password = user.password,
             loginNo = user.loginNo,
@@ -27,9 +27,6 @@ class UserMapper(
             accountNonExpired = true,
             accountNonLocked = true,
             credentialsNonExpired = true
-//            user.lastUpdatePasswordTime + userProperties.maxUnModifyPasswordDuration.toMillis() > System.currentTimeMillis(),
-//            user.lastUpdatePasswordTime + userProperties.userExpireDuration.toMillis() > System.currentTimeMillis(),
-//            user.lastUpdatePasswordTime + userProperties.maxUnModifyPasswordDuration.toMillis() > System.currentTimeMillis(),
         )
     }
 

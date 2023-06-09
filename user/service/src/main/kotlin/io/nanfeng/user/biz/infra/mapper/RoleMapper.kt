@@ -1,7 +1,7 @@
 package io.nanfeng.user.biz.infra.mapper
 
 import io.nanfeng.user.biz.domain.authentication.dto.RoleDto
-import io.nanfeng.user.biz.entity.Role
+import io.nanfeng.user.biz.domain.role.entity.Role
 import org.mapstruct.Mapper
 import org.mapstruct.factory.Mappers
 

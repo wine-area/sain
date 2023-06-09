@@ -27,6 +27,9 @@ tasks.compileJava {
     options.encoding = "UTF-8"
 }
 
+
+// 处理配置文件
+
 tasks.jar {
     manifest {
         attributes(

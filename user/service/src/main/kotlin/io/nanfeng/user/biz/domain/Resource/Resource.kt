@@ -1,4 +1,4 @@
-package io.nanfeng.user.biz.entity
+package io.nanfeng.user.biz.domain.Resource
 
 import io.nanfeng.common.data.entity.BaseTreeEntity
 import jakarta.persistence.Entity
