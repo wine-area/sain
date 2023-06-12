@@ -6,6 +6,7 @@ include(":common:core")
 include(":common:data")
 include(":common:web")
 include(":common:webflux")
+include(":common:captcha-starter")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 if (!System.getenv("CI").isNullOrEmpty() && !System.getenv("BUILD_SCAN_TOS_ACCEPTED").isNullOrEmpty()) {
