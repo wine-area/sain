@@ -9,7 +9,7 @@ dependencies {
     api(project(":common:data"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     // spring-security
-    implementation("org.springframework.boot:spring-boot-starter-security")
+//    implementation("org.springframework.boot:spring-boot-starter-security")
     // querydsl
     implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
     // kapt-queryDsl-kotlin
@@ -24,5 +24,5 @@ dependencies {
     // knife4j
     implementation("com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter:+")
 //     spring-oauthorization-server 需要oauth2的时候再整
-    implementation("org.springframework.security:spring-security-oauth2-authorization-server:1.1.0")
+//    implementation("org.springframework.security:spring-security-oauth2-authorization-server:1.1.0")
 }

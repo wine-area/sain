@@ -13,13 +13,10 @@ plugins {
     id("org.springframework.boot")
 }
 
-logger.lifecycle("Enabling Kotlin Spring plugin in module ${project.path}")
 apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
-logger.lifecycle("Enabling Spring Boot plugin in module ${project.path}")
 apply(plugin = "org.springframework.boot")
 
-logger.lifecycle("Enabling Spring Boot Dependency Management in module ${project.path}")
 apply(plugin = "io.spring.dependency-management")
 
 
@@ -30,7 +27,7 @@ springBoot {
         properties {
             additional.set(
                 mapOf(
-                    "env" to project.properties.get("env"),
+                    "env" to project.properties["env"],
                     "creationTime" to Instant.now().toString()
                 )
             )

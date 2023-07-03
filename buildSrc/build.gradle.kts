@@ -1,6 +1,4 @@
 plugins {
-    // Support convention plugins written in Kotlin. Convention plugins are build scripts in 'src/main'
-    // that automatically become available as plugins in the main build.
     `kotlin-dsl`
 }
 
@@ -12,6 +10,7 @@ repositories {
 
 dependencies {
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
+    implementation(files(springLibs.javaClass.superclass.protectionDomain.codeSource.location))
     implementation(libs.kotlin.gradle.plugin)
     implementation(libs.kotlin.allopen.plugin)
     implementation(libs.spring.boot.gradle.plugin)

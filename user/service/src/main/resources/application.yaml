@@ -8,3 +8,6 @@ spring:
         - dev
       prod:
         - prod
+  mvc:
+    problemdetails:
+      enabled: true

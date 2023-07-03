@@ -1,8 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+import io.gitlab.arturbosch.detekt.Detekt
 import io.nanfeng.gradle.constant.JDK_VERSION
 import io.nanfeng.gradle.constant.KOTLIN_VERSION
-import io.gitlab.arturbosch.detekt.Detekt
 import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 
 plugins {

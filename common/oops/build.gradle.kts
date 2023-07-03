@@ -4,6 +4,5 @@ plugins {
     id("library-conventions")
 }
 dependencies {
-    api(projects.common.core)
-    api(springLibs.spring.boot.starter.web)
+    api(project(":common:core"))
 }
