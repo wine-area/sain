@@ -1,7 +1,7 @@
-package io.nanfeng.user.biz
+package io.nanfeng.common.web
 
 import org.springframework.http.HttpHeaders
-import org.springframework.http.HttpStatus.*
+import org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
@@ -24,4 +24,5 @@ class BizExceptionHandler : ResponseEntityExceptionHandler() {
         val headers = HttpHeaders()
         return handleExceptionInternal(ex, body, headers, INTERNAL_SERVER_ERROR, request)
     }
+
 }
