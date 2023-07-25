@@ -10,6 +10,7 @@ dependencies {
     api(libs.kotlin.logging)
     implementation(libs.jackson.module.kotlin)
     implementation(libs.spring.boot.starter)
+    api(libs.jakarta.validation)
     compileOnly(springLibs.spring.boot.starter.web)
 }
 
