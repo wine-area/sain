@@ -5,9 +5,8 @@ plugins {
 }
 
 dependencies {
-    api(platform(springLibs.spring.boot.bom))
-    api(platform(springLibs.spring.cloud.bom))
+    api(enforcedPlatform(springLibs.spring.boot.bom))
+    api(enforcedPlatform(springLibs.spring.cloud.bom))
     constraints {
-
     }
 }

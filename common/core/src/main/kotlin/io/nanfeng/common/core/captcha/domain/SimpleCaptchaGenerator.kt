@@ -1,3 +1,3 @@
-package io.nanfeng.common.core.captcha
+package io.nanfeng.common.core.captcha.domain
 
 object SimpleCaptchaGenerator : AbstractCaptchaGenerator()

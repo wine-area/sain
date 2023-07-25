@@ -2,7 +2,7 @@ package io.nanfeng.common.captcha.api
 
 import io.nanfeng.common.captcha.entity.CaptchaEntity
 import io.nanfeng.common.captcha.repository.CaptchaRepository
-import io.nanfeng.common.core.captcha.SimpleCaptchaGenerator
+import io.nanfeng.common.core.captcha.domain.SimpleCaptchaGenerator
 
 class CaptchaService(
     private val captchaRepository: CaptchaRepository

@@ -1,4 +1,4 @@
-package io.nanfeng.common.core.captcha
+package io.nanfeng.common.core.captcha.domain
 
 /**
  * 验证码生成器

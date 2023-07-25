@@ -1,4 +1,4 @@
-package io.nanfeng.common.core.captcha
+package io.nanfeng.common.core.captcha.domain
 
 abstract class AbstractCaptchaGenerator(
     override val sourceChars: List<Char> = ('0'..'9') + ('a'..'z') + ('A'..'Z')

@@ -6,9 +6,13 @@ import java.net.InetAddress
 import java.net.UnknownHostException
 import java.text.MessageFormat
 
+private const val S = "-"
+
+private const val getBREAK = "\n"
+
 object ApplicationStartupTraces {
-    private val SEPARATOR = "-".repeat(58)
-    private const val BREAK = "\n"
+    private val SEPARATOR = S.repeat(58)
+    private const val BREAK = getBREAK
     private val log = LoggerFactory.getLogger(ApplicationStartupTraces::class.java)
     fun of(environment: Environment): String {
         return ApplicationStartupTracesBuilder()
