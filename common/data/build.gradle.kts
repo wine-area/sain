@@ -7,7 +7,8 @@ dependencies {
     api(libs.spring.boot.starter.data.jpa)
     api(libs.kotlin.logging)
     implementation(libs.spring.boot.starter)
-    implementation(libs.querydsl.jpa)
+    implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
     // kapt-queryDsl-kotlin
-    kapt(libs.querydsl.apt)
+    kapt("com.querydsl:querydsl-apt:5.0.0:jakarta")
+
 }

@@ -17,11 +17,7 @@ class QueryDslRepositoryImpl<T>(
     entityInformation: JpaEntityInformation<T, Long>,
     entityManager: EntityManager
 ) : SimpleJpaRepository<T, Long>(entityInformation, entityManager), QueryDslRepository<T> {
-    private val queryFactory: JPAQueryFactory
-
-    init {
-        queryFactory = JPAQueryFactory(entityManager)
-    }
+    private val queryFactory: JPAQueryFactory = JPAQueryFactory(entityManager)
 
     override fun query(): JPQLQuery<*> {
         return queryFactory.query()
