@@ -1,5 +1,7 @@
-package io.nanfeng.common.data.entity
+package io.nanfeng.common.data.tree.domain
 
+import io.nanfeng.common.data.jpa.domain.BaseEntity
+import jakarta.persistence.ConstraintMode
 import jakarta.persistence.ForeignKey
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
@@ -20,7 +22,7 @@ open class BaseTreeEntity<T : BaseTreeEntity<T>> : BaseEntity() {
     @JoinColumn(
         name = "parent_id",
         referencedColumnName = "id",
-        foreignKey = ForeignKey(name = "none")
+        foreignKey = ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT)
     )
     var children: MutableList<T> = mutableListOf()
 

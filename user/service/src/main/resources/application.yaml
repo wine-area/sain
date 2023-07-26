@@ -11,3 +11,7 @@ spring:
   mvc:
     problemdetails:
       enabled: true
+  data:
+    jpa:
+      repositories:
+        enabled: false

@@ -1,6 +1,6 @@
 package io.nanfeng.user.biz.domain.client.entity
 
-import io.nanfeng.common.data.entity.BaseEntity
+import io.nanfeng.common.data.jpa.domain.BaseEntity
 import jakarta.persistence.Entity
 import jakarta.persistence.Table
 import java.io.Serializable

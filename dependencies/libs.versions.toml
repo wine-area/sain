@@ -1,0 +1,12 @@
+[versions]
+hilla = "2.1.0"
+querydsl-jpa = "5.0.0:jakarta"
+[libraries]
+hilla-react-spring-boot-starter = { module = "dev.hilla:hilla-react-spring-boot-starter" }
+hilla-bom = { module = "dev.hilla:hilla-bom", version.ref = "hilla" }
+querydsl-jpa = { module = "com.querydsl:querydsl-jpa", version.ref = "querydsl-jpa" }
+querydsl-apt = { module = "com.querydsl:querydsl-apt", version.ref = "querydsl-jpa" }
+
+
+[plugins]
+hilla = { id = "dev.hilla", version.ref = "hilla" }

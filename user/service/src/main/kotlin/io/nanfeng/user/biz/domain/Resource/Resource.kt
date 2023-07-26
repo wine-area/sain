@@ -1,6 +1,6 @@
 package io.nanfeng.user.biz.domain.Resource
 
-import io.nanfeng.common.data.entity.BaseTreeEntity
+import io.nanfeng.common.data.tree.domain.BaseTreeEntity
 import jakarta.persistence.Entity
 import jakarta.persistence.Table
 

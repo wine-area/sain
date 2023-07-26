@@ -1,7 +1,7 @@
 package io.nanfeng.user.biz.domain.org
 
 import com.fasterxml.jackson.annotation.JsonIgnore
-import io.nanfeng.common.data.entity.BaseTreeEntity
+import io.nanfeng.common.data.tree.domain.BaseTreeEntity
 import io.nanfeng.user.biz.domain.user.User
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
