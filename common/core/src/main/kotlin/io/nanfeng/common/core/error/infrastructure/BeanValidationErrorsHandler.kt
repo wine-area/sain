@@ -34,6 +34,8 @@ internal class BeanValidationErrorsHandler {
         val problem = buildProblemDetail()
         problem.setProperty(ERRORS, buildErrors(exception))
         log.info(exception.message, exception)
+
+
         return problem
     }
 
